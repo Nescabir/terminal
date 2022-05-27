@@ -1,0 +1,64 @@
+.App {
+  flex-grow: 1;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  .terminal {
+    // flex-grow: 1;
+    max-height: calc(100% - 20px);
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    .prompt {
+      display: flex;
+      .input {
+        font-size: 1rem;
+        font-family: 'Inconsolata', monospace;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        color: white;
+      }
+    }
+    .hostname {
+      font-weight: 700;
+      margin-right: .5em
+    }
+    .helpcmd {
+      &.header {
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      display: grid;
+      grid-template-columns: 1fr 1fr 12fr;
+      .cmd {
+        margin-right: 2em;
+      }
+    }
+    .display {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: flex-start;
+      max-height: calc(100vh - 2em - 20px);
+      overflow-x: hidden;
+      .command {
+        .inner {
+          display: flex;
+          flex-direction: column;
+          margin: .2em 0;
+          gap: .3em;
+          .level-0 {
+            color: white;
+          }
+          .level-1 {
+            color: rgb(255, 181, 71)
+          }
+          .level-2 {
+            color: rgb(255, 71, 71);
+          }
+        }
+      }
+    }
+  }
+}
